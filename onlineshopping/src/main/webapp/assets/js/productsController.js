@@ -1,6 +1,6 @@
 var app = angular.module('ShoppingApp', []);
 
-app.controller('ProductController', function($http) {
+app.controller('JsonDataController', function($http) {
 	
 	var me = this;
 		

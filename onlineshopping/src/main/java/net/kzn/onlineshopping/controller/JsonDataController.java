@@ -23,6 +23,7 @@ public class JsonDataController {
 	@ResponseBody
 	public List<Product> getAllProducts() {
 		
+		System.out.println(productDAO.listActiveProducts());
 		return productDAO.listActiveProducts();
 				
 	}

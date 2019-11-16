@@ -3,9 +3,9 @@
 
 <!-- DataTable Bootstrap Script -->
 <script src="${js}/productsController.js"></script>
-<div class="container" ng-app="ShoppingApp" ng-controller="ProductController as pCtrl" >
+<div class="container" ng-app="ShoppingApp" ng-controller="JsonDataController as pCtrl" >
 
-	<div class="row" ng-init="pCtrl.fetchProducts()">
+	<div class="row" ng-init="pCtrl.getAllProducts()">
 
 		<div class="col-md-3">
 			<%@include file="./shared/sidebar.jsp"%>
@@ -65,7 +65,7 @@
 
                 <div class="row is-table-row">
                 	
-                    <div class="col-sm-4" ng-repeat="product in pCtrl.mvProducts">                    	
+                    <div class="col-sm-4" ng-repeat="product in pCtrl.getAllProducts">                    	
                         <div class="thumbnail">
                             <img ng-src="${images}/{{product.code}}.jpg" alt="{{product.name}}" class="landingImg">
                             <h5>{{product.name}}</h5>
@@ -73,7 +73,7 @@
                             <div class="caption">
                                 <h4 class="pull-right">&#8377; {{product.unitPrice}}</h4>
                                 <p>{{product.description}}</p>
-                                <a ng-href="${contextRoot}/show/{{product.id}}/product" class="btn btn-primary pull-right">View</a>
+                                <a ng-href="${contextRoot}/show/category/{{product.id}}/products" class="btn btn-primary pull-right">View</a>
                             </div>
                         </div>
                         
